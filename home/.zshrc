@@ -18,6 +18,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# No idea why, but this needs to be source'd at the top too...
+[ -f ~/.oh-my-zsh.zshrc ] && source ~/.oh-my-zsh.zshrc
+
 #-----------------------------------------------------------
 # common configs
 #-----------------------------------------------------------
@@ -48,6 +51,7 @@ fpath=(~/.homesick/repos/homeshick/completions $fpath)
 if can_haz fzf; then
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
   [ -f ~/.fzf.zshrc ] && source ~/.fzf.zshrc
+  source /usr/share/doc/fzf/examples/completion.zsh
 fi
 
 #-----------------------------
@@ -103,7 +107,6 @@ fi
 #-----------------------------
 # aliases and env settings
 #-----------------------------
-[ -f ~/.oh-my-zsh.zshrc ] && source ~/.oh-my-zsh.zshrc
 [ -f ~/.alias.zshrc ] && source ~/.alias.zshrc
 [ -f ~/.profile ] && source ~/.profile
 
@@ -111,6 +114,7 @@ fi
 # Path and variable settings
 #-----------------------------
 export REVIEW_BASE=master
+export FZF_COMPLETION_TRIGGER='**'
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 #################################################
