@@ -29,4 +29,8 @@ alias gut="git"
 alias cht="cht.sh --shell"
 alias cheat="cht.sh --shell"
 
+#-----------------------------
+# IntelliJ IDEA
+# ----------------------------
+alias idea="intellij-idea-community"
 
